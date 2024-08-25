@@ -1,20 +1,14 @@
-name: Deploy to GitHub Pages
+name: Print Hello World
 
 on:
   push:
     branches:
-      - main
+      - main  # Triggers the workflow on push to the 'main' branch
 
 jobs:
-  deploy:
+  say-hello:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GH_PAT }}  # Use your PAT here
-          publish_dir: ./  # Assuming your index.html is in the root directory
+      - name: Print Hello World
+        run: echo "Hello, World!"
